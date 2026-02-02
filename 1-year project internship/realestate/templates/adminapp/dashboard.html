@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Home</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="{% static 'adminapp/css/dashboard.css' %}">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo">RealEstate Co.</div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Login</button>
+                        <div class="dropdown-content">
+                            <a href="{% url 'login' %}">Admin</a>
+                            <a href="{% url 'login_1' %}">Dealer</a>
+                            <a href="{% url 'login_0' %}">Buyer</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Find Your Dream Home</h1>
+            <p>Discover a wide range of properties for sale and rent.</p>
+            <a href="#" class="cta-button">Search Properties</a>
+        </div>
+    </section>
+
+    <!-- Featured Listings -->
+    <section id="featured-properties">
+        <h2>Featured Properties</h2>
+        <div class="property-grid">
+            <div class="property-card">
+                <img src="/media/p_images/darren-ahmed-arceo-yg6kPegPelI-unsplash.jpg" alt="Property 1">
+                <h3>Property Title 1</h3>
+                <p>Location, Price, Details...</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="property-card">
+                <img src="/media/p_images/darren-ahmed-arceo-yg6kPegPelI-unsplash.jpg" alt="Property 2">
+                <h3>Property Title 2</h3>
+                <p>Location, Price, Details...</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="property-card">
+                <img src="/media/p_images/darren-ahmed-arceo-yg6kPegPelI-unsplash.jpg" alt="Property 3">
+                <h3>Property Title 3</h3>
+                <p>Location, Price, Details...</p>
+                <a href="#">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Your trusted partner in real estate. We help you find, buy, sell, and manage properties easily through a user-friendly platform backed by professionals.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 RealEstate Co.</p>
+    </footer>
+
+    <!-- Inline JavaScript to handle contact form -->
+    <script>
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the form from submitting normally
+
+            // Collect input values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Show confirmation
+            alert('Message sent successfully!\nName: ' + name + '\nEmail: ' + email + '\nMessage: ' + message);
+
+            // Reset form fields
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+</body>
+</html>

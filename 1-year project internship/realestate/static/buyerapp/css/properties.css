@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+/* Back Button */
+.btn-back {
+  background-color: #1e3d2f;
+  color: #fff;
+  border: 1px solid #2f5e45;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #2e674e;
+  color: #fff;
+  border-color: #3d8b6e;
+  box-shadow: 0 0 10px rgba(46, 103, 78, 0.6);
+}
+
+/* Property Card */
+.property-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.property-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 255, 135, 0.3);
+}
+
+.property-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Typography */
+.card-title {
+  color: #00ff99;
+  font-size: 1.2rem;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Buttons */
+.btn-outline-light:hover {
+  background-color: #00ffaa;
+  color: #000;
+}
+
+/* Carousel nav */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .property-card img {
+    height: 160px;
+  }
+}

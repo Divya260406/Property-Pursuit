@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Property Pursuit{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'buyerapp/css/index.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+
+  <!-- 🔷 Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="{% url 'index' %}">🏠 Property Pursuit</a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'properties' %}">Properties</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'buyerapp_contact' %}">Contact</a></li>
+
+          {% if user.is_authenticated %}
+          <li class="user-dropdown">
+            <a href="#">{{ user.username }}</a>
+            <ul class="dropdown">
+              <li><a href="{% url 'buyer_profile' %}">Profile</a></li>
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+          </li>
+          {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🔽 Page Content -->
+  {% block content %}{% endblock %}
+
+</body>
+
+</html>

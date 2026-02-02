@@ -1,0 +1,31 @@
+.btn-update {
+  padding: 10px 24px;
+  font-size: 16px;
+  background-color: #28a745; /* green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-right: 16px;
+}
+
+.btn-update:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  padding: 10px 24px;
+  font-size: 16px;
+  background-color: #dc3545; /* red */
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}

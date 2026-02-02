@@ -1,0 +1,62 @@
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+.glass-section {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 30px rgba(0, 255, 204, 0.1);
+  border: 1px solid rgba(0, 255, 204, 0.15);
+}
+
+h2 {
+  color: #00ffcc;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+p.lead,
+.card-body {
+  color: #e0f7f7;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card-header {
+  background: transparent;
+  border: none;
+}
+
+.btn-link {
+  font-size: 1.1rem;
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
+}
+
+img.img-fluid {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+}
+
+.card {
+  background-color: transparent;
+  border: 1px solid rgba(0, 255, 204, 0.15);
+  margin-bottom: 1rem;
+}

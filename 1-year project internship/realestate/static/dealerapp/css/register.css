@@ -1,0 +1,95 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Register Form */
+form {
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  padding: 40px 30px;
+  color: #fff;
+}
+
+form h3 {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  background-color: #00bcd4;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00acc1;
+}
+
+/* Error Message */
+form p {
+  margin-top: 15px;
+  text-align: center;
+  color: red;
+}
+
+/* Optional link style */
+form a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+form a:hover {
+  text-decoration: underline;
+}

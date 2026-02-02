@@ -1,0 +1,83 @@
+body {
+  background-color: #000;
+  color: #00ff88;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Booking List Styles */
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-card {
+  display: flex;
+  flex-direction: row;
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid #00ff88;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 0 10px #00ff88;
+  transition: transform 0.3s ease;
+}
+
+.booking-card:hover {
+  transform: scale(1.02);
+}
+
+.booking-image img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #00ff88;
+  margin-right: 20px;
+}
+
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.booking-info p {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.no-bookings {
+  padding: 20px;
+  border: 1px dashed #00ff88;
+  text-align: center;
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(0, 255, 136, 0.05);
+  margin-top: 20px;
+}
+
+/* ✅ Clean Light Table (removes neon style) */
+.property-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #333;
+}
+
+.property-table th,
+.property-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.property-table thead {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.property-table tbody tr:hover {
+  background-color: #f9f9f9;
+}

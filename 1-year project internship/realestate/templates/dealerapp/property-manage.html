@@ -1,0 +1,75 @@
+{% extends 'dealerapp/master.html' %}
+{% load static %}
+
+{% block title %}Manage Properties | Property Pursuit{% endblock %}
+
+{% block content %}
+<main class="main">
+  <div class="page-header">
+    <h1>Manage Properties</h1>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Property List</h5>
+
+      <table class="property-table table table-bordered table-hover align-middle text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Area (sq ft)</th>
+            <th>Rent Price (₹)</th>
+            <th>Amenities</th>
+            <th>Images</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for d in P_E %}
+          <tr>
+            <td>{{ d.id }}</td>
+            <td>{{ d.p_name }}</td>
+            <td>{{ d.p_address }}</td>
+            <td>{{ d.p_area }}</td>
+            <td>{{ d.p_rentprize }}</td>
+            <td>{{ d.a_name }}</td>
+            <td>
+              {% if d.image_set.all %}
+              <div id="carousel{{ d.id }}" class="carousel slide" data-bs-ride="carousel" style="width: 200px; height: 150px; overflow: hidden;">
+                <div class="carousel-inner">
+                  {% for image in d.image_set.all %}
+                  <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img src="{{ image.p_image.url }}" class="d-block w-100 h-100 object-fit-cover" alt="Image {{ forloop.counter }}">
+                  </div>
+                  {% endfor %}
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ d.id }}" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ d.id }}" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              {% else %}
+              <p>No images</p>
+              {% endif %}
+            </td>
+            <td>
+              <!-- You can add Edit/Delete buttons here -->
+              <a href="{% url 'edit-property' d.id %}" class="btn btn-primary btn-sm">Edit</a>
+              <a href="{% url 'delete_property' d.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'dealerapp/master.html' %}
+{% load static %}
+
+{% block title %}Add Property | Property Pursuit{% endblock %}
+
+{% block content %}
+<div class="form-container">
+  <h2>Add Property Details</h2>
+
+  <form action="/dealerapp/update_property/{{ object.id }}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label>Property Name</label>
+      <input type="text" name="p_name" value="{{ object.p_name }}">
+    </div>
+
+    <div class="form-group">
+      <label>Address</label>
+      <textarea name="p_address" rows="3">{{ object.p_address }}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Area (in sq ft)</label>
+      <input type="text" name="p_area" value="{{ object.p_area }}">
+    </div>
+
+    <div class="form-group">
+      <label>Property Type</label>
+      <select name="p_type">
+        <option value="BUNGLOW" {% if object.p_type == "BUNGLOW" %}selected{% endif %}>Bunglow</option>
+        <option value="APPARTMENT" {% if object.p_type == "APPARTMENT" %}selected{% endif %}>Apartment</option>
+        <option value="ROW_HOUSE" {% if object.p_type == "ROW_HOUSE" %}selected{% endif %}>Row House</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Furniture Type</label>
+      <select name="p_furnishingtype">
+        <option value="FULLY" {% if object.p_furnishingtype == "FULLY" %}selected{% endif %}>Fully Furnished</option>
+        <option value="SEMI" {% if object.p_furnishingtype == "SEMI" %}selected{% endif %}>Semi Furnished</option>
+        <option value="NOT" {% if object.p_furnishingtype == "NOT" %}selected{% endif %}>Not Furnished</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group half">
+        <label>Property Age</label>
+        <input type="number" name="p_age" value="{{ object.p_age }}" min="0">
+      </div>
+      <div class="form-group half">
+        <label>Age Type</label>
+        <div class="radio-group">
+          <label><input type="radio" name="p_age_type" value="month" {% if object.p_age_type == "month" %}checked{% endif %}> Month</label>
+          <label><input type="radio" name="p_age_type" value="year" {% if object.p_age_type == "year" %}checked{% endif %}> Year</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Direction</label>
+      <div class="radio-group">
+        <label><input type="radio" name="p_direction" value="north" {% if object.p_direction == "north" %}checked{% endif %}> North</label>
+        <label><input type="radio" name="p_direction" value="south" {% if object.p_direction == "south" %}checked{% endif %}> South</label>
+        <label><input type="radio" name="p_direction" value="east" {% if object.p_direction == "east" %}checked{% endif %}> East</label>
+        <label><input type="radio" name="p_direction" value="west" {% if object.p_direction == "west" %}checked{% endif %}> West</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Rent Price (₹)</label>
+      <input type="number" name="p_rentprize" value="{{ object.p_rentprize }}" min="0">
+    </div>
+
+    <div class="form-group">
+      <label>Upload Property Images</label>
+      <input type="file" name="p_image" multiple>
+    </div>
+
+    <div class="form-group">
+      <label>Amenities</label>
+      <input type="text" name="a_name" value="{{ object.a_name }}" placeholder="e.g., Parking, Garden, AC">
+    </div>
+
+   <div class="form-actions mt-4 d-flex justify-content-start">
+  <button type="submit" class="btn-update">🔄 Update</button>
+  <a href="{% url 'manage' %}" class="btn-cancel">❌ Cancel</a>
+</div>
+
+
+
+  </form>
+</div>
+{% endblock %}

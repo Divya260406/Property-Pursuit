@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Pursuit - Login</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'adminapp/css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>Welcome Back</h2>
+
+            {% if error %}
+            <div class="error-message">{{ error }}</div>
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter your username" required>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+
+                <button type="submit">Login</button>
+
+                <div class="social-login">
+                    <p>or login with</p>
+                    <div class="social-buttons">
+                        <div class="social google"><i class="fab fa-google"></i> Google</div>
+                        <div class="social facebook"><i class="fab fa-facebook-f"></i> Facebook</div>
+                    </div>
+                </div>
+
+                <!-- 👇 Registration Link -->
+                <div class="register-link">
+                    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

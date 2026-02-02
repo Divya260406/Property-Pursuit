@@ -1,0 +1,58 @@
+{% extends 'dealerapp/master.html' %}
+{% load static %}
+
+{% block title %}Booking Requests - Property Pursuit{% endblock %}
+
+{% block content %}
+
+<div class="pagetitle">
+  <h1>Interested Buyers</h1>
+  <!-- <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'dashboard_1' %}">Home</a></li>
+      <li class="breadcrumb-item active">Interested Buyers</li>
+    </ol>
+  </nav> -->
+</div>
+
+{% if br %}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Booking Requests Table</h5>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>#</th>
+            <th>Buyer Username</th>
+            <th>Buyer Email</th>
+            <th>Property ID</th>
+            <th>Property Name</th>
+            <th>Address</th>
+            <th>Rent Price (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ab in br %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ ab.user.username }}</td>
+            <td>{{ ab.user.email }}</td>
+            <td>{{ ab.prop.id }}</td>
+            <td>{{ ab.prop.p_name }}</td>
+            <td>{{ ab.prop.p_address }}</td>
+            <td>{{ ab.prop.p_rentprize }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+{% else %}
+  <div class="alert alert-warning">No interested buyers yet.</div>
+{% endif %}
+
+{% endblock %}

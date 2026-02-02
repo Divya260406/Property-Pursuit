@@ -1,0 +1,14 @@
+{% extends 'buyerapp/master.html' %}
+
+{% block title %}Home - Property Pursuit{% endblock %}
+
+{% block content %}
+<!-- 🏡 Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Find Your Dream Property</h1>
+        <p>Explore trusted listings across Ahmedabad tailored just for you.</p>
+        <a href="{% url 'properties' %}" class="btn btn-primary">Browse Properties</a>
+    </div>
+</section>
+{% endblock %}

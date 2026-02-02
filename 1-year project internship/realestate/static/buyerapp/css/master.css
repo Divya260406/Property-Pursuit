@@ -1,0 +1,28 @@
+.navbar {
+  height: 70px; /* or any fixed height */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background-color: #000 !important;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  margin-bottom: 0; /* prevents Bootstrap’s ul resetting */
+}
+
+.navbar a,
+.navbar li {
+  line-height: 1.5 !important;
+  font-size: 1rem !important;
+}

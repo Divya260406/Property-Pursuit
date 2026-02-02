@@ -1,0 +1,187 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f6f9ff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Page Title */
+.pagetitle {
+  margin-bottom: 20px;
+}
+
+.pagetitle h1 {
+  font-size: 26px;
+  color: #0d6efd;
+}
+
+.breadcrumb {
+  background: none;
+  padding: 0;
+  margin-top: 6px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  color: #888;
+  padding: 0 5px;
+}
+
+/* Section & Card */
+.section {
+  padding: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: separate !important;
+  border-spacing: 0 12px; /* Row spacing only */
+  background-color: transparent;
+  table-layout: auto;
+}
+
+.table thead th {
+  background-color: #0d6efd;
+  color: white;
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.table tbody tr {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #eef3ff;
+}
+
+.table td {
+  padding: 14px 18px;
+  vertical-align: middle;
+}
+
+/* Column Spacing */
+.table td + td,
+.table th + th {
+  border-left: 12px solid transparent;
+}
+
+/* Zebra Striping */
+.table tbody tr:nth-child(even) {
+  background-color: #f9fbff;
+}
+
+/* Action Buttons */
+.property-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.property-actions a {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: #fff;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.property-actions a.btn-edit {
+  background-color: #0d6efd;
+}
+
+.property-actions a.btn-edit:hover {
+  background-color: #0b5ed7;
+}
+
+.property-actions a.btn-delete {
+  background-color: #dc3545;
+}
+
+.property-actions a.btn-delete:hover {
+  background-color: #bb2d3b;
+}
+
+.property-actions a.btn-view {
+  background-color: #198754;
+}
+
+.property-actions a.btn-view:hover {
+  background-color: #157347;
+}
+
+/* Image Preview */
+.carousel-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.carousel-inner img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+  }
+
+  .property-actions {
+    justify-content: center;
+  }
+}
