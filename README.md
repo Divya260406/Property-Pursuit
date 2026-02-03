@@ -25,17 +25,18 @@ The objective of this project is to design and develop a functional real estate 
 
 ## 📂 Project Structure
 
-Property Pursuit/
-├── 1-year project internship/
-│ └── realestate/
-│ ├── realestate/
-│ ├── apps/
-│ ├── templates/
-│ ├── static/
-│ └── manage.py
-├── requirements.txt
-├── README.md
-└── Property Pursuit_Presentation.pptx
+    Property Pursuit/
+    ├── 1-year project internship/
+    │   └── realestate/
+    │       ├── realestate/
+    │       ├── apps/
+    │       ├── templates/
+    │       ├── static/
+    │       └── manage.py
+    ├── requirements.txt
+    ├── README.md
+    └── Property Pursuit_Presentation.pptx
+
 
 
 ## ⚙️ Installation & Setup
