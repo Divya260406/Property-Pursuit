@@ -25,17 +25,17 @@ The objective of this project is to design and develop a functional real estate 
 
 ## 📂 Project Structure
 
-   Property Pursuit/
-   ├── 1-year project internship/
-   │   └── realestate/
-   │       ├── realestate/
-   │       ├── apps/
-   │       ├── templates/
-   │       ├── static/
-   │       └── manage.py
-   ├── requirements.txt
-   ├── README.md
-   └── Property Pursuit _Presentation.pptx
+  Property Pursuit/
+├── 1-year project internship/
+│ └── realestate/
+│ ├── realestate/
+│ ├── apps/
+│ ├── templates/
+│ ├── static/
+│ └── manage.py
+├── requirements.txt
+├── README.md
+└── Property Pursuit _Presentation.pptx
 
 ## ⚙️ Installation & Setup
 
@@ -103,10 +103,6 @@ http://127.0.0.1:8000/
 ## 🔐 Environment Variables
 
 A `.env` file can be used to store sensitive information such as secret keys and database credentials (recommended for deployment).
-
-## 📸 Screenshots
-
-Screenshots of the application UI can be added inside a `screenshots/` folder for better presentation.
 
 ## 📈 Future Enhancements
 
